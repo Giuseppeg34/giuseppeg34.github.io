@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<br>
+		<title>Giuseppe's projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<span class="miniavatar"> <a href="index.html"><img src="images/avatar1.jpg" alt="" /></a></span>
+						<h1 style="font-size: 70px;">STOCHASTIC <strong>PATH TRACING</strong> 
+						</h1>
+
+					</header>
+
+				<!-- Main -->
+					<section id="main">
+
+						<!-- Thumbnails -->
+							<section class="thumbnails">
+								<div>
+									<a href="images/fulls/PT.jpg">
+										<img src="images/thumbs/PT.jpg" alt="" />
+										<h3>[a] result of rendering </h3>
+									</a>
+									<a href="images/fulls/PT3.jpg">
+										<img src="images/thumbs/PT3.jpg" alt="" />
+										<h3>[b] Blinn permutation formula on the small sphere </h3>
+									</a>
+									<a href="images/fulls/PT4.jpg">
+										<img src="images/thumbs/PT4.jpg" alt="" />
+										<h3>[c] hourglass</h3>
+									</a>
+								</div>
+								<div>
+									<h3 style="text-align: justify; margin-left: 100px; margin-right: -200px;">
+										One of my projects for University is a <b>stochastic Ray Tracing</b> to render a simple scene of
+										a Cornell Box with two balls inside. This project was coordinated by prof. Massimo Picardello.
+										<p>This code gives the possibility to choose which element to insert and the corrisponding material.
+										I have implemented Cook-Torrance's BRDF to rappresent glossy materials and Lambert's BRDF to diffuse materials.
+										To calculate global illumination, I have separeted the contributions of direct and indirect illumination,
+										following the book "Advanced Global Illumination" by Dutrè.
+										<p><b>Direct illumination</b> is calculated by using a simple ray tracing that, for each ray shooted from camera, 
+										determines the hitting point on scene. On this point is calculated the color (using the BRDF of the corrisponding object) 
+										and is traced a shodow ray, that connect the point with a random point on the light (determinated by uniform sampling) .
+										<br>The calculation of <b>Indirect Illumination</b> is done by iterating the procedure. The contributions is obtained using
+										the MonteCarlo estimator with cosine-weighted hemisphere sampling. 
+										The recursion is stopped by using Roussian Roulette's algotithm or with a defined number of steps.
+										<p>I added the possibility to activate <b>Blinn perturbation formula</b>, to make irregular the surface of an object  (as you can see in [b] image).
+										Another feature is the chance to insert an <b>hourglass</b>. This 3D object is obtained by altering the equation of a sphere.
+										In this case, I used <p style="text-align: center;">  r/10+9r/10*cos(theta) </p> where <i>r </i> is the radius of the sphere and <i>theta</i> is the angle included by the radius and the upward versor.
+										Note that this equation is never 0. <br>(Result in [c] image). 
+										<p style="text-align: center;"> <br><b>IMPROVEMENTS</b></p>
+										<p style="margin-top: -30px;">In this version, the intersection is calculated by using the parametric equation of objects, so I want to implement the triangulation of the meshes.
+										The next step is to add glass objects and implement algotithms for render caustics.
+										</p>
+									</h3>
+								</div>
+							</section>
+						
+
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p>Giuseppe Giordano   -   Design: <a href="http://templated.co">TEMPLATED</a>.</p>
+					</footer>
+
+			</div>
+
+
+	</body>
+</html>
